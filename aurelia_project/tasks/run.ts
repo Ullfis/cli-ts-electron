@@ -3,6 +3,7 @@ import * as browserSync from 'browser-sync';
 import * as historyApiFallback from 'connect-history-api-fallback/lib';
 import * as project from '../aurelia.json';
 import build from './build';
+import rebuild from './build-start';
 import {CLIOptions} from 'aurelia-cli';
 
 function onChange(path) {
@@ -39,7 +40,7 @@ let serve = gulp.series(
 );
 
 let refresh = gulp.series(
-  build,
+  rebuild,
   reload
 );
 
