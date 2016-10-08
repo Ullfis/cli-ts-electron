@@ -1,10 +1,11 @@
 import * as gulp from 'gulp';
 
-import preBuild from './build-pre';
-import rebuild from './build-start';
-
+import buildCompile from './build-compile';
+import prepareOutput from './prepare-output';
+import prepareScripts from './prepare-scripts';
 
 export default gulp.series(
-  preBuild,
-  rebuild
+  prepareOutput,
+  prepareScripts,
+  buildCompile
 );
