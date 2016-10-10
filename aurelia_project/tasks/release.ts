@@ -24,7 +24,6 @@ function deleteFolder() {
     path.join(dist, '**/*')
   ]);
 }
-
 function copyRoot() {
   return gulp.src(rootFiles).pipe(gulp.dest(dist));
 }
