@@ -1,8 +1,10 @@
 import { computedFrom, inject, NewInstance } from 'aurelia-framework';
 import { ValidationController, ValidationRules } from 'aurelia-validation';
 import { MaterializeFormValidationRenderer } from 'aurelia-materialize-bridge';
+import { EventAggregator } from 'aurelia-event-aggregator';
+import { I18N } from 'aurelia-i18n';
 
-@inject(NewInstance.of(ValidationController))
+@inject(I18N, Element, EventAggregator, NewInstance.of(ValidationController))
 export class Welcome {
   heading: string = 'Welcome to the Aurelia Navigation App';
   firstName: string = 'John';
@@ -18,9 +20,13 @@ export class Welcome {
       .minLength(4)
     .rules;
 
-  constructor(controller: ValidationController) {
+  constructor(private i18n: I18N, private element: Element, private ea: EventAggregator, controller: ValidationController) {
     this.controller = controller;
     this.controller.addRenderer(new MaterializeFormValidationRenderer());
+
+    ea.subscribe('i18n:locale:changed', payload => {
+      this.i18n.updateTranslations(this.element);
+    });    
   }
 
   //Getters can't be directly observed, so they must be dirty checked.
@@ -41,6 +47,10 @@ export class Welcome {
     if (this.fullName !== this.previousValue) {
       return confirm('Are you sure you want to leave?');
     }
+  }
+
+  async setLocale(locale: string) {
+    await this.i18n.setLocale(locale);
   }
 
 }
