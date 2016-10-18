@@ -1,7 +1,12 @@
 {
   "name": "run",
-  "description": "Builds the application and serves up the assets via a local web server, watching files for changes as you work.",
+  "description": "Builds the application and serves up the assets via a local web server or electron, watching files for changes as you work.",
   "flags": [
+    {
+      "name": "browser",
+      "description": "Run app in browser.",
+      "type": "boolean"
+    },    
     {
       "name": "env",
       "description": "Sets the build environment.",

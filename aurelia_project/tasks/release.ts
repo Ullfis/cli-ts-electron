@@ -6,7 +6,8 @@ import * as del from 'del';
 let dist = 'release';
 let rootFiles = [
   'favicon.ico',
-  'index.html'
+  'index.html',
+  'index.js'
 ];
 
 export default gulp.series(
@@ -15,7 +16,8 @@ export default gulp.series(
     copyRoot,
     copyScripts,
     copyStyles,
-    copyFonts
+    copyFonts,
+    copyLocales
   )
 );
 

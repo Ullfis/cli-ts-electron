@@ -30,6 +30,7 @@
   },
   "peerDependencies": {},
   "devDependencies": {
+    "@types/electron": "^1.4.24",
     "@types/i18next-xhr-backend": "^1.2.2",
     "@types/jasmine": "^2.5.35",
     "@types/node": "^6.0.45",
@@ -42,6 +43,8 @@
     "browser-sync": "^2.17.3",
     "connect-history-api-fallback": "^1.2.0",
     "del": "^2.2.2",
+    "electron": "^1.4.3",
+    "electron-reload": "^1.0.2",
     "event-stream": "^3.3.3",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-changed-in-place": "^2.0.3",

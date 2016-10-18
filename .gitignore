@@ -5,3 +5,4 @@ scripts
 fonts
 styles/materialize.min.css
 release
+npm-debug.*

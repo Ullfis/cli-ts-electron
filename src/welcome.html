@@ -5,22 +5,14 @@
       <md-card>
         <md-input md-label="First Name" md-value.bind="firstName & validate:rules"></md-input>
         <md-input md-label="Last Name" md-value.bind="lastName & validate:rules"></md-input><br />
-        <button type="button" md-button md-waves="color: light;" click.delegate="greet()" md-modal-trigger href="#modal1">Submit</button>
+        <button md-button md-waves="color: light;" click.delegate="greet()" md-modal-trigger href="#modal1">Submit</button><br/>
+        <button md-button md-waves="color: light;" click.delegate="sayHello()">Welcome with Electron</button>
       </md-card>
       <md-card md-title="Full name">
         <div>
           ${fullName | upper}
         </div>
       </md-card>
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h4>Welcome!</h4>
-          <p>Welcome, ${fullName}</p>
-        </div>
-        <div class="modal-footer">
-          <a md-button="flat: true;" md-waves="color: accent;" class="modal-action modal-close">Close</a>
-        </div>
-      </div>
 
       <md-card if.bind="controller.errors.length">
         <h5 class="error-text">You have errors!</h5>
@@ -32,7 +24,7 @@
           </li>
         </ul>
       </md-card>
-
+      
       <md-card>
         <div class="group">
           <label for="locale">Select locale</label>
@@ -44,5 +36,15 @@
       </md-card>
     </div>
 
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Welcome!</h4>
+        <p>Welcome, ${fullName}</p>
+      </div>
+      <div class="modal-footer">
+        <a md-button="flat: true;" md-waves="color: accent;" class="modal-action modal-close">Close</a>
+      </div>
+    </div>
+    
   </section>
 </template>

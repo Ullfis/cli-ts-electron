@@ -3,6 +3,7 @@ import { ValidationController, ValidationRules } from 'aurelia-validation';
 import { MaterializeFormValidationRenderer } from 'aurelia-materialize-bridge';
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { I18N } from 'aurelia-i18n';
+import { remote } from 'electron';
 
 @inject(I18N, Element, EventAggregator, NewInstance.of(ValidationController))
 export class Welcome {
@@ -42,6 +43,14 @@ export class Welcome {
     this.previousValue = this.fullName;
     this.controller.validate();
   }
+
+  sayHello() {
+    remote.dialog.showMessageBox({ 
+      title: 'Welcome!',
+      message: 'Welcome, ' + this.fullName,
+      buttons: ['OK']
+    });
+  }  
 
   canDeactivate(): boolean {
     if (this.fullName !== this.previousValue) {
