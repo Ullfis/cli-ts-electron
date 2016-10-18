@@ -1,6 +1,6 @@
 {
-  "name": "au-cli-skel",
-  "description": "An Aurelia client application.",
+  "name": "cli-ts-electron",
+  "description": "An Aurelia electron application.",
   "version": "0.1.0",
   "repository": {
     "type": "???",
@@ -18,14 +18,24 @@
     "aurelia-animator-css": "^1.0.0",
     "aurelia-bootstrapper": "^1.0.1",
     "aurelia-fetch-client": "^1.0.1",
+    "aurelia-i18n": "^1.1.2",
     "aurelia-materialize-bridge": "^0.17.1",
     "aurelia-validation": "^0.13.1",
     "bluebird": "^3.4.1",
+    "i18next": "^3.4.4",
+    "i18next-xhr-backend": "^1.2.0",
     "requirejs": "^2.3.2",
-    "text": "github:requirejs/text"
+    "text": "github:requirejs/text",
+    "whatwg-fetch": "^1.0.0"
   },
   "peerDependencies": {},
   "devDependencies": {
+    "@types/i18next-xhr-backend": "^1.2.2",
+    "@types/jasmine": "^2.5.35",
+    "@types/node": "^6.0.45",
+    "@types/protractor": "^1.5.20",
+    "@types/selenium-webdriver": "^2.44.26",
+    "@types/whatwg-fetch": "0.0.32",
     "aurelia-cli": "^0.21.0",
     "aurelia-testing": "^1.0.0-beta.2.0.0",
     "aurelia-tools": "^0.2.2",
