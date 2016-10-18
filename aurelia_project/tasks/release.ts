@@ -39,3 +39,7 @@ function copyFonts() {
   return gulp.src(path.join('fonts', '**/*.*'))
     .pipe(gulp.dest(path.join(dist, 'fonts')));
 }
+function copyLocales() {
+  return gulp.src(path.join('locales', '**/*.*'))
+    .pipe(gulp.dest(path.join(dist, 'locales')));
+}

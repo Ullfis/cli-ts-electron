@@ -1,5 +1,5 @@
 {
-  "name": "au-cli-skel",
+  "name": "cli-ts-electron",
   "type": "project:application",
   "platform": {
     "id": "web",
@@ -12,7 +12,6 @@
     "displayName": "TypeScript",
     "fileExtension": ".ts",
     "dtsSource": [
-      "./typings/**/*.d.ts",
       "./custom_typings/**/*.d.ts"
     ],
     "source": "src/**/*.ts"
@@ -116,6 +115,7 @@
         "name": "vendor-bundle.js",
         "prepend": [
           "node_modules/bluebird/js/browser/bluebird.core.js",
+          "node_modules/whatwg-fetch/fetch.js",
           "node_modules/requirejs/require.js"
         ],
         "dependencies": [
@@ -123,6 +123,7 @@
           "aurelia-bootstrapper",
           "aurelia-dependency-injection",
           "aurelia-event-aggregator",
+          "aurelia-fetch-client",
           "aurelia-framework",
           "aurelia-history",
           "aurelia-history-browser",
@@ -161,6 +162,21 @@
             "name": "aurelia-validation",
             "path": "../node_modules/aurelia-validation/dist/amd",
             "main": "aurelia-validation"
+          },
+          {
+            "name": "i18next",
+            "path": "../node_modules/i18next/dist/umd",
+            "main": "i18next"
+          },
+          {
+            "name": "aurelia-i18n",
+            "path": "../node_modules/aurelia-i18n/dist/amd",
+            "main": "aurelia-i18n"
+          },
+          {
+            "name": "i18next-xhr-backend",
+            "path": "../node_modules/i18next-xhr-backend/dist/umd",
+            "main": "i18nextXHRBackend"
           }
         ]
       }
