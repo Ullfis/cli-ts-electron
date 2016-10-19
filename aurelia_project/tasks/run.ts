@@ -5,9 +5,14 @@ import * as project from '../aurelia.json';
 import build from './build';
 import buildCompile from './build-compile';
 import {CLIOptions} from 'aurelia-cli';
+import * as path from 'path';
+import * as fs from 'fs';
+import * as os from 'os';
 
 import * as childProcess from 'child_process';
 import * as electron from 'electron';
+
+let reloadFile = path.join(__dirname, '..', '..', 'tools', 'reload.electron');
 
 function onChange(path) {
   console.log(`File Changed: ${path}`);
@@ -16,6 +21,10 @@ function onChange(path) {
 function reload(done) {
   browserSync.reload();
   done();
+}
+
+function reloadElectron(done) {
+  fs.appendFile(reloadFile, (new Date()).toString() + os.EOL, 'utf-8', done);
 }
 
 let serve = gulp.series(
@@ -64,7 +73,8 @@ let refresh = gulp.series(
 );
 
 let refreshElectron = gulp.series(
-  buildCompile
+  buildCompile,
+  reloadElectron
 );
 
 let watch = function() {
