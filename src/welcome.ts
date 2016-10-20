@@ -13,13 +13,6 @@ export class Welcome {
   previousValue: string = this.fullName;
 
   controller = null;
-  rules = ValidationRules
-    .ensure('firstName')
-      .required()
-    .ensure('lastName')
-      .required()
-      .minLength(4)
-    .rules;
 
   constructor(private i18n: I18N, private element: Element, private ea: EventAggregator, controller: ValidationController) {
     this.controller = controller;
@@ -27,7 +20,15 @@ export class Welcome {
 
     ea.subscribe('i18n:locale:changed', payload => {
       this.i18n.updateTranslations(this.element);
-    });    
+    });
+
+    ValidationRules
+    .ensure('firstName')
+      .required()
+    .ensure('lastName')
+      .required()
+      .minLength(4)
+    .on(this);
   }
 
   //Getters can't be directly observed, so they must be dirty checked.

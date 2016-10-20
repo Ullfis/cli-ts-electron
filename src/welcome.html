@@ -3,8 +3,8 @@
     <div class="container">
       <h3 t="welcome.Header"></h3>
       <md-card>
-        <md-input md-label="First Name" md-value.bind="firstName & validate:rules"></md-input>
-        <md-input md-label="Last Name" md-value.bind="lastName & validate:rules"></md-input><br />
+        <md-input md-label="First Name" md-value.bind="firstName & validate"></md-input>
+        <md-input md-label="Last Name" md-value.bind="lastName & validate"></md-input><br />
         <button md-button md-waves="color: light;" click.delegate="greet()" md-modal-trigger href="#modal1">Submit</button><br/>
         <button md-button md-waves="color: light;" click.delegate="sayHello()">Welcome with Electron</button>
       </md-card>
