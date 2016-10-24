@@ -12,6 +12,13 @@ export class Welcome {
   lastName: string = 'Doe';
   previousValue: string = this.fullName;
 
+  status = {
+    electronVersion: '',
+    chromeVersion: '',
+    nodeVersion: '',
+    v8Version: ''
+  };
+
   controller = null;
 
   constructor(private i18n: I18N, private element: Element, private ea: EventAggregator, controller: ValidationController) {
@@ -29,6 +36,11 @@ export class Welcome {
       .required()
       .minLength(4)
     .on(this);
+
+    this.status.chromeVersion = process.versions.chrome;
+    this.status.electronVersion = process.versions.electron;
+    this.status.nodeVersion = process.versions.node;
+    this.status.v8Version = process.versions.v8;
   }
 
   //Getters can't be directly observed, so they must be dirty checked.
