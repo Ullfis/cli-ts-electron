@@ -21,12 +21,10 @@
     "aurelia-i18n": "^1.1.2",
     "aurelia-materialize-bridge": "^0.17.1",
     "aurelia-validation": "^0.13.1",
-    "bluebird": "^3.4.1",
     "i18next": "^3.4.4",
     "i18next-xhr-backend": "^1.2.0",
     "requirejs": "^2.3.2",
-    "text": "github:requirejs/text",
-    "whatwg-fetch": "^1.0.0"
+    "text": "github:requirejs/text"
   },
   "peerDependencies": {},
   "devDependencies": {

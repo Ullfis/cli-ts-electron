@@ -89,7 +89,6 @@
       {
         "name": "materialize-bundle.js",
         "dependencies": [
-          "jquery",
           {
             "name": "materialize-css",
             "path": "../node_modules/materialize-css/dist",
@@ -106,6 +105,7 @@
               "jquery"
             ],
             "resources": [
+              "index.js",
               "**/*.{css,html}"
             ]
           }
@@ -113,9 +113,7 @@
       },       
       {
         "name": "vendor-bundle.js",
-        "prepend": [
-          "node_modules/bluebird/js/browser/bluebird.core.js",
-          "node_modules/whatwg-fetch/fetch.js",
+        "prepend": [          
           "node_modules/requirejs/require.js"
         ],
         "dependencies": [
@@ -141,6 +139,7 @@
           "aurelia-task-queue",
           "aurelia-templating",
           "aurelia-templating-binding",
+          "jquery",
           "text",
           {
             "name": "aurelia-templating-resources",
